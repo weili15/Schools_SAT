@@ -93,7 +93,7 @@ def draw_california(school_data, zip_data):
     plt.title('Average SAT scores for schools in California')
     draw_zip_income(m,fig,zip_data)
     ax2 = fig.add_axes([0.92, 0.1, 0.03, 0.8])
-    mpl.colorbar.ColorbarBase(ax2,cmap=cmap, norm=norm, label='SAT score', orientation='horizontal')
+    mpl.colorbar.ColorbarBase(ax2,cmap=cmap, norm=norm, label='SAT score')
     plt.savefig('California_schools_SAT')
     print "California Map Finished"
 
@@ -126,7 +126,7 @@ def draw_LA(school_data, zip_data):
 
     labels = ['Santa Monica', 'Beverly Hills', 'Torrance', 'Irvine', 'Inglewood', 'Pasadena','Fullerton']
     for label, xpt, ypt in zip(labels, x, y):
-        plt.text(xpt, ypt, label)
+        plt.text(xpt, ypt, label, color='white')
 
     draw_zip_income(m,fig,zip_data)
     #COLORBAR
@@ -166,7 +166,7 @@ def draw_SF(school_data, zip_data):
 
     labels = ['Oakland', 'Mission District', 'Palo Alto', 'San Jose','Cupertino', 'Walnut Creek']
     for label, xpt, ypt in zip(labels, x, y):
-        plt.text(xpt, ypt, label)
+        plt.text(xpt, ypt, label, color='blue')
 
     draw_zip_income(m,fig,zip_data)
     #COLORBAR
