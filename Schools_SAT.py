@@ -51,7 +51,7 @@ def draw_zip_income(m,fig,zip_data):
     ax = plt.gca()
     #Make colormap, with low of 10000 and max of 200000
     norm = mpl.colors.Normalize(vmin=10000, vmax=150000)
-    cmap = cm.Greens #Different colormap than the schools' red/blue colormap
+    cmap = cm.BrBG #Different colormap than the schools' red/blue colormap
     myColorMap = cm.ScalarMappable(norm=norm, cmap=cmap)
 
     for rec in shape_recs:
@@ -65,7 +65,7 @@ def draw_zip_income(m,fig,zip_data):
             ax.add_patch(patch)
     #Add Colormap
     ax2 = fig.add_axes([0.04, 0.1, 0.03, 0.8])
-    mpl.colorbar.ColorbarBase(ax2,cmap=cmap, norm=norm, label='Income', orientation='horizontal')
+    mpl.colorbar.ColorbarBase(ax2,cmap=cmap, norm=norm, label='Income')
     return m,fig
 
 #Draw map of California with school/SAT data
@@ -131,7 +131,7 @@ def draw_LA(school_data, zip_data):
     draw_zip_income(m,fig,zip_data)
     #COLORBAR
     ax2 = fig.add_axes([0.92, 0.1, 0.03, 0.8])
-    mpl.colorbar.ColorbarBase(ax2,cmap=cmap, norm=norm, label='SAT score', orientation='horizontal')
+    mpl.colorbar.ColorbarBase(ax2,cmap=cmap, norm=norm, label='SAT score')
 
     plt.savefig('LA_schools_SAT')
     print "LA Map Finished"
@@ -171,7 +171,7 @@ def draw_SF(school_data, zip_data):
     draw_zip_income(m,fig,zip_data)
     #COLORBAR
     ax2 = fig.add_axes([0.92, 0.1, 0.03, 0.8])
-    mpl.colorbar.ColorbarBase(ax2,cmap=cmap, norm=norm, label='SAT score', orientation='horizontal')
+    mpl.colorbar.ColorbarBase(ax2,cmap=cmap, norm=norm, label='SAT score')
 
     plt.savefig('SF_schools_SAT')
     print "SF Map Finished"
